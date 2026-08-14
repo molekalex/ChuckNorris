@@ -1,0 +1,17 @@
+{
+  "name": "chuck-norris-api-tests",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.0",
+    "@types/node": "^26.1.2",
+    "ajv": "^8.17.1"
+  },
+  "compilerOptions": {
+    "types": [
+      "node",
+      "@playwright/test"
+    ]
+  }
+}

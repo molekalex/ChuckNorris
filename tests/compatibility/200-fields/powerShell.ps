@@ -1,0 +1,14 @@
+$response = Invoke-RestMethod `
+    -Uri https://api.chucknorris.io/jokes/random
+
+$response.id
+$response.value
+
+if(
+    $response.id -and
+    $response.value -and
+    $response.icon_url -and
+    $response.url
+){
+    "PASS"
+}
