@@ -1,4 +1,4 @@
-name: Functional Tests
+name: Playwright Tests
 on:
   push:
     branches: [ main, master ]
@@ -17,8 +17,12 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps chromium 
-    - name: Run Playwright tests
+    - name: Run Functional tests
       run: npx playwright test functional.spec.ts --project=chromium
+    - name: Run Http Validation tests
+      run: npx playwright test http-validation.spec.ts --project=chromium
+    - name: Run negative tests
+      run: npx playwright test negative.spec.ts --project=chromium
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
