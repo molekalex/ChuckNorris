@@ -74,7 +74,7 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run http Tests
-        run: npx playwright test http-validation.spec.ts --project=chromium
+        run: npx playwright test cloudfare-validation.spec.ts --project=chromium
 
 
   negative:
