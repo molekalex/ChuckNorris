@@ -19,8 +19,8 @@ jobs:
       run: npx playwright install --with-deps chromium 
     - name: Run Functional tests
       run: npx playwright test functional.spec.ts --project=chromium
-    - name: Run Http Validation tests
-      run: npx playwright test http-validation.spec.ts --project=chromium
+    - name: Run Http Cloud Validation tests
+      run: npx playwright test cloudfare-validation.spec.ts --project=chromium
     - name: Run negative tests
       run: npx playwright test negative.spec.ts --project=chromium
     - uses: actions/upload-artifact@v4
