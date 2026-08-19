@@ -2,7 +2,7 @@ name: Scheduled Tests
 
 on:
   schedule:
-    - cron: '45 17 * * 3'  # Run every Wednesday at 17:45 UTC
+    - cron: '30 18 * * 3'  # Run every Wednesday at 18:30 UTC
 
 jobs:
 
