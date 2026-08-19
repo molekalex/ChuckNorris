@@ -1,0 +1,38 @@
+name: Scheduled Tests
+
+on:
+  schedule:
+    - cron: '45 17 * * 3'  # Run every Wednesday at 17:45 UTC
+
+jobs:
+
+  tests:
+    name: ${{ matrix.test }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        test:
+          - functional.spec.ts
+          - cloudfare-validation.spec.ts
+          - negative.spec.ts
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: Run tests
+        run: npx playwright test ${{ matrix.test }} --project=chromium
