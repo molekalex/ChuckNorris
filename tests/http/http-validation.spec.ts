@@ -9,6 +9,7 @@ const validateCommonHeaders = (headers: Record<string, string | string[] | undef
 
   /* as using cloudfare the cache-control header dont exist in the headers so the validation 
      following 3 validations will fail if running with the chucknorris.io API.
+     this validations will be only executed if service cloudfare is not used.
   */
  
   expect(headers['cache-control']).toBeDefined();
