@@ -1,8 +1,11 @@
 {
   "name": "chuck-norris-api-tests",
   "scripts": {
-    "test": "playwright test"
-  },
+    "regression": "npx playwright test",
+    "negative": "npx playwright test functional.spec.ts --project=chromium",
+    "http": "npx playwright test cloudfare.spec.ts --project=chromium",
+    "functional": "npx playwright test functional.spec.ts --project=chromium"
+  }, 
   "devDependencies": {
     "@playwright/test": "^1.62.0",
     "@types/node": "^26.1.2",
