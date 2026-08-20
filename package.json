@@ -2,7 +2,7 @@
   "name": "chuck-norris-api-tests",
   "scripts": {
     "regression": "npx playwright test",
-    "negative": "npx playwright test functional.spec.ts --project=chromium",
+    "negative": "npx playwright test negative.spec.ts --project=chromium",
     "http": "npx playwright test cloudfare.spec.ts --project=chromium",
     "functional": "npx playwright test functional.spec.ts --project=chromium"
   }, 
