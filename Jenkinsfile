@@ -7,6 +7,7 @@ pipeline {
                 // Clone directly from GitHub
                 //git branch: 'main',
                 //    url: 'https://github.com/molekalex/ChuckNorris.git'
+                echo '✅ Checkout complete.'
             }
         }
 
@@ -14,6 +15,7 @@ pipeline {
             steps {
                 // Use npm ci for reproducible installs
                 sh 'npm ci'
+                echo '✅ Dependencies installed.'
             }
         }
 
@@ -21,6 +23,7 @@ pipeline {
             steps {
                 // Run your test suite
                 sh 'npm functional'
+                echo '✅ functional Tests finished.'
             }
         }
     }
@@ -29,6 +32,9 @@ pipeline {
         always {
             // Archive test results or logs if needed
             //junit 'reports/**/*.xml'
+            echo '📊 Archiving test results...'
+            echo '🏁 Pipeline finished.'
+            echo '✅ Post-test cleanup complete.'
         }
     }
 }
