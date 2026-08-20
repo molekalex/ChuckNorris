@@ -22,7 +22,7 @@ pipeline {
         stage('Run Functional Tests') {
             steps {
                 // Run your test suite
-                sh 'npm functional'
+                sh 'npm run functional'
                 echo '✅ functional Tests finished.'
             }
         }
